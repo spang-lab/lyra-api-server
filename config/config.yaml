@@ -1,0 +1,34 @@
+# Full lyra configuration
+server:
+    logLevel: 5
+    port: 8080
+    maxWorkers: 4
+    dataPath: 'data'
+
+authentication:
+    url: https://auth.spang-lab.de/oidc
+    clientId: lyra-development
+    scopes:
+      - openid
+      - groups
+      - profile
+    accessGroups:
+      internal: 'lyra'
+      private: 'lyra-admin' 
+    clients:
+      lymmml:
+        redirectUrl: 'http://lymmml.mhuttner.com:8089/api/v3/user/callback/lymmml'
+        logoutUrl: 'http://lymmml.mhuttner.com:8089'
+
+      sysprog:
+        redirectUrl: 'http://sysprog.mhuttner.com:8089/api/v3/user/callback/sysprog'
+        logoutUrl: 'http://sysprog.mhuttner.com:8089'
+
+database:
+    name: 'lyra'
+    host: 'postgres.spang-lab.de'
+    port: 5432
+    version: '1.0.3'
+
+
+

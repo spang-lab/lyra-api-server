@@ -1,0 +1,38 @@
+{
+  "name": "api-server-lyra",
+  "version": "2.7.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "base64url": "^3.0.1",
+    "csv": "^5.3.2",
+    "js-yaml": "^3.14.0",
+    "koa": "^2.12.0",
+    "koa-body": "^4.1.3",
+    "koa-favicon": "^2.1.0",
+    "koa-helmet": "^5.2.0",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^8.0.8",
+    "koa-session": "^6.0.0",
+    "koa-static": "^5.0.0",
+    "lru-cache": "^5.1.1",
+    "lyra-component": "file:./custom_modules/lyra-component",
+    "node-fetch": "^2.6.0",
+    "openid-client": "^3.15.1",
+    "pg-promise": "^10.5.6",
+    "semver": "^7.3.2",
+    "tar-stream": "^2.1.2"
+  }
+}

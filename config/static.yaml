@@ -1,0 +1,286 @@
+columns:
+  - table: token
+    columns:
+      - key
+      - token
+      - type
+      - data
+      - created
+      - lifetime
+  - table: identifier_list 
+    columns:
+      - name
+      - type
+  - table: dataset 
+    columns:
+      - name
+      - display_name 
+      - type         
+      - access       
+      - description  
+      - row_id_type  
+      - col_id_type  
+      - num_rows     
+      - num_cols     
+      - species      
+      - file_name    
+      - hash         
+      - last_modified
+  - table: identifier_data_map 
+    columns:
+      - identifier
+      - dataset
+      - direction
+      - index
+  - table: dna_data_map 
+    columns:
+      - chromosome
+      - section   
+      - strand    
+      - type      
+      - dataset   
+      - direction 
+      - index     
+  - table: identifier_identifier_map 
+    columns:
+      - identifier_1
+      - identifier_2
+      - dataset
+      - weight
+      - type
+  - table: plot_data
+    columns:
+      - name
+      - data
+  - table: mhn_graph 
+    columns:
+      - name
+      - data
+  - table: dna_data
+    columns:
+      - row_index
+      - col_index
+      - value
+  - table: dna_text_data
+    columns:
+      - row_index
+      - col_index
+      - value
+  - table: pheno_data
+    columns:
+      - row_index
+      - col_index
+      - value
+  - table: matrix_data
+    columns:
+      - row_index
+      - col_index
+      - value
+
+constants:
+  - name: TYPE_WEIGHT 
+    values:
+      'none': 0
+      'gene name': 10
+      'genome section': 1
+      'named genome section': 1
+      'identifier': 1
+      'human sample': 1
+      'mouse sample': 1
+      'cell sample': 1
+      'pheno statistic': 1
+      'generic name': 1
+      'affy id': 1
+      'ensembl gene id': 1
+      'ensembl transcript id': 1
+      'ensembl exon id': 1
+      'ensembl protein id': 1
+      'entrez id': 1
+      'uniprot accession': 1
+      'uniprot entry name': 1
+      'go term biological process': 1
+      'go term cellular component': 1
+      'go term molecular function': 1
+      'go term': 1
+      'hgnc id': 1
+      'unigene id': 1
+      'refseq protein accession': 1
+      'refseq mrna accession': 1
+      'illumina id': 1
+      'kegg pathway id': 1
+      'biocarta pathway name': 1
+      'genbank nucleotide accession': 1
+      'transcript name': 1
+  - name: ACCESS_VALUE
+    values:
+      'public': 0
+      'internal': 1
+      'private': 2
+
+enums:
+  - name: TOKEN_TYPE 
+    values:
+      - name: search
+      - name: https
+  - name: DNA_STRAND 
+    values:
+      - name: '+'
+      - name: '-' 
+      - name: none
+  - name: DIRECTION 
+    values:
+      - name: row 
+      - name: col 
+      - name: none
+  - name: ACCESS_LEVEL
+    values:
+      - name: public
+      - name: internal
+      - name: private
+  - name: TAXONOMY
+    values:
+    - name: homo sapiens
+      aliases:
+      - homo_sapiens
+      - human
+      - h
+      - '9606'
+    - name: mus musculus
+      aliases:
+      - mus_musculus
+      - mouse
+      - m
+      - '10090'
+    - name: test species 
+      aliases:
+      - testspecies
+      - test
+      - t
+    - name: none
+  - name: DATASET_TYPE
+    values:
+    - name: expression_matrix
+    - name: pheno_data_matrix
+    - name: mutation_matrix
+    - name: copy_number_matrix
+    - name: dna_sequence_data
+    - name: identifier_mapping
+    - name: annotation
+    - name: plot_list
+    - name: mhn_graph
+  - name: DNA_MAP_TYPE
+    values:
+    - name: gene
+    - name: exon
+    - name: transcript
+    - name: cds 
+    - name: selenocysteine
+    - name: five_prime_utr
+    - name: start_codon
+    - name: stop_codon
+    - name: three_prime_utr
+    - name: cpg_island
+    - name: section_name
+    - name: sequence_data
+  - name: ID_MAP_TYPE 
+    values:
+    - name: type_mapping 
+    - name: correlation
+  - name: IDENTIFIER_TYPE
+    values:
+    - name: none
+    - name: gene name
+      aliases:
+      - gene_name
+      - gene
+      - gene_symbol
+      - gene_name
+    - name: genome section
+    - name: named genome section
+    - name: identifier
+    - name: human sample
+    - name: mouse sample
+    - name: cell sample
+    - name: pheno statistic
+    - name: generic name
+    - name: affy id
+      aliases:
+      - affy_id
+    - name: ensembl gene id
+      aliases:
+      - ensembl_gene_id
+    - name: ensembl transcript id
+      aliases:
+      - ensembl_transcript_id
+      - transcript_id
+    - name: ensembl exon id
+      aliases:
+      - ensembl_exon_id
+      - exon_id
+    - name: ensembl protein id
+      aliases:
+      - ensembl_protein_id
+    - name: entrez id
+      aliases:
+      - gene_id
+    - name: uniprot accession
+      aliases:
+      - uniprot_accession
+    - name: uniprot entry name
+      aliases:
+      - uniprot_entry_name
+    - name: go term biological process
+      aliases:
+      - go_-_biological_process
+    - name: go term cellular component
+      aliases:
+      - go_-_cellular_component
+    - name: go term molecular function
+      aliases:
+      - go_-_molecular_function
+    - name: go term
+      aliases:
+      - go_id
+    - name: hgnc id
+      aliases:
+      - hgnc_id
+    - name: unigene id
+      aliases:
+      - unigene_id
+    - name: refseq protein accession
+      aliases:
+      - refseq_protein_accession
+    - name: refseq mrna accession
+      aliases:
+      - refseq_mrna_accession
+    - name: illumina id
+      aliases:
+      - illumina_id
+    - name: kegg pathway id
+      aliases:
+      - kegg_pathway_id
+    - name: biocarta pathway name
+      aliases:
+      - biocarta_pathway_name
+    - name: genbank nucleotide accession
+      aliases:
+      - genbank_nucleotide_accession
+    - name: transcript name
+      aliases:
+      - transcript_name
+
+tables:
+  - name: identifier_list
+    description: List of all known identifiers
+  - name: token
+    description: stores tokens for temporary actions
+  - name: dataset
+    description: stores basic information about the available datasets
+  - name: identifier_data_map
+    description: stores which identifiers map to available datasets
+  - name: dna_data_map
+    description: stores mappings from dna sections to data
+  - name: identifier_identifier_map
+    description: stores which identifiers map to other identifiers
+
+
